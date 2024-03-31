@@ -9,6 +9,9 @@ RUN apk add --no-cache gettext
 # Copy the custom configuration file template
 COPY nginx.conf.template /etc/nginx/conf.d/nginx.conf.template
 
+COPY nginx.conf /etc/nginx/conf.d/nginx.conf
+
+
 # Copy a script to substitute environment variables and run Nginx
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
